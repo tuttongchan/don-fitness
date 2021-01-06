@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Audiowide', cursive;
-  /* font-family: 'Poppins', sans-serif; */
 }
 
 /* Navigation */
@@ -17,6 +16,7 @@ nav {
   justify-content: space-between;
   background-color: #232a3b;
   overflow-x: hidden;
+  position: relative;
 }
 
 h1 {
@@ -51,6 +51,59 @@ nav li a {
   color: #fff;
   font-family: Poppins;
   font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+  nav li a {
+    display: none;
+  }
+
+  .navbar-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 100px);
+    position: absolute;
+    width: 100%;
+    top: -1000px;
+  }
+
+  .navbar-menu.active {
+    top: 100%;
+    opacity: 1;
+    z-index: 99;
+    height: 100vh;
+    font-size: 1.5rem;
+    background: black;
+  }
+
+  .navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 /* Header/Hero Section*/
@@ -282,7 +335,7 @@ header {
 
 .team-img {
   width: 100%;
-  height: 95%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -370,7 +423,7 @@ header {
   background-size: cover;
   height: 450px;
   width: 100%;
-  padding: 5rem (100vw - 1300px) / 2;
+  padding: 5rem 3rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -451,9 +504,15 @@ form {
 }
 
 .footer-description h2 {
+  font-family: 'Audiowide', cursive;
   margin-bottom: 2rem;
-  color: red;
+  color: white;
   font-size: 1.5rem;
+}
+
+.footer-description h2 span {
+  font-family: 'Audiowide', cursive;
+  color: #44c184;
 }
 
 .footer-description p {
@@ -468,7 +527,6 @@ form {
 .footer-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* padding-left: 3rem; */
 }
 
 .footer-links {
