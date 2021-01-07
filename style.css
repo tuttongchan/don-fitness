@@ -6,17 +6,25 @@
 
 body {
   font-family: 'Audiowide', cursive;
+  /* overflow: hidden; */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* Navigation */
 nav {
-  background-color: aqua;
   height: 10vh;
   display: flex;
   justify-content: space-between;
   background-color: #232a3b;
-  overflow-x: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 h1 {
@@ -54,8 +62,18 @@ nav li a {
 }
 
 @media screen and (max-width: 768px) {
-  nav li a {
-    display: none;
+  /* .navbar-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  } */
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0 0 2rem;
   }
 
   .navbar-menu {
@@ -116,7 +134,7 @@ header {
   justify-content: flex-start;
   align-items: center;
   color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -160,7 +178,7 @@ header {
 
 /* Services Section */
 .services {
-  padding: 5rem 0;
+  padding: 5rem 4rem 5rem 0;
   font-family: Poppins;
 }
 
@@ -222,7 +240,7 @@ header {
 .membership {
   background: black;
   color: white;
-  padding: 4rem 6rem;
+  padding: 2rem 6rem;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
@@ -423,7 +441,7 @@ header {
   background-size: cover;
   height: 450px;
   width: 100%;
-  padding: 5rem 3rem;
+  padding: 5rem 1rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -436,7 +454,7 @@ header {
   align-items: center;
 }
 
-.email-content h1 {
+.email-content h2 {
   text-align: center;
   margin-bottom: 1rem;
   font-size: clamp(1rem, 5vw, 3rem);
@@ -567,4 +585,195 @@ form {
   .footer-links {
     padding: 1rem;
   }
+}
+
+/* Form Section */
+.contact-form {
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-col-right h2 {
+  letter-spacing: 2px;
+  padding: 1rem 0;
+  opacity: 0.9;
+}
+
+.text {
+  font-weight: 300;
+  line-height: 1.7;
+  padding: 0.5rem 0;
+}
+
+#submit-btn,
+#login-btn {
+  border: none;
+  outline: 0;
+  display: block;
+  margin: 1.5rem 0;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: red;
+  color: white;
+  padding: 0.85rem 2rem;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+}
+
+#submit-btn {
+  border-color: red;
+  margin-top: 0.6rem;
+}
+
+#submit-btn:hover {
+  border-color: red;
+  background: white;
+  color: red;
+}
+
+#login-btn:hover {
+  background: white;
+  color: red;
+}
+
+.fa-long-arrow-alt-right {
+  margin-left: 3px;
+}
+
+.contact-form {
+  min-height: 100vh;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin: 3rem 0;
+  max-width: 1080px;
+  box-shadow: 0 0 20px -3px rgba(160, 160, 160, 0.7);
+}
+
+.form-row > div {
+  padding: 2rem 3rem;
+}
+
+.form-col-right {
+  flex: 1;
+  background: red;
+  color: white;
+}
+
+.form-col-left h2 {
+  color: red;
+}
+
+.form-item {
+  margin: 1.5rem;
+}
+
+.form-item label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
+.form-group {
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 25px auto;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.form-group span {
+  opacity: 0.8;
+}
+
+.form-control {
+  width: 100%;
+  border: none;
+  outline: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding-left: 0.4rem;
+}
+
+.form-control::placeholder {
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.submission-status {
+  margin-top: 0.6rem;
+  padding: 0.6rem 0;
+  letter-spacing: 1px;
+  display: block;
+  font-weight: 500;
+  visibility: hidden;
+}
+
+/* Media Queries */
+@media screen and (min-width: 600px) {
+  .form-item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.8rem;
+  }
+
+  .form-item {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .form-col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* messages */
+.error {
+  border-color: red;
+}
+
+.success {
+  border-color: #28a745;
+}
+
+.errorMessage {
+  visibility: visible;
+  color: red;
+}
+
+.successMessage {
+  visibility: visible;
+  color: #28a745;
 }
